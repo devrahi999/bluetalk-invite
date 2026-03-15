@@ -1,144 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opening BlueTalk</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opening BlueTalk</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", sans-serif;
-        }
+<style>
 
-        body {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #2563eb, #1e3a8a);
-            color: white;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", sans-serif;
+}
 
-        .container {
-            text-align: center;
-            padding: 40px;
-            width: 90%;
-            max-width: 420px;
-        }
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+color:white;
+}
 
-        .logo {
-            width: 90px;
-            height: 90px;
-            border-radius: 22px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-            margin-bottom: 25px;
-        }
+.container{
+text-align:center;
+padding:40px;
+width:90%;
+max-width:420px;
+}
 
-        .logo span {
-            font-size: 34px;
-            font-weight: bold;
-            color: #2563eb;
-        }
+.logo{
+width:90px;
+height:90px;
+border-radius:22px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+margin-bottom:25px;
+overflow:hidden;
+}
 
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
+.logo img{
+width:100%;
+height:100%;
+object-fit:contain;
+}
 
-        .subtitle {
-            opacity: 0.9;
-            font-size: 15px;
-            margin-bottom: 30px;
-        }
+h1{
+font-size:28px;
+margin-bottom:10px;
+}
 
-        .loader {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.25);
-            border-top: 4px solid white;
-            margin: auto;
-            animation: spin 1s linear infinite;
-        }
+.subtitle{
+opacity:0.9;
+font-size:15px;
+margin-bottom:30px;
+}
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
+.loader{
+width:45px;
+height:45px;
+border-radius:50%;
+border:4px solid rgba(255,255,255,0.25);
+border-top:4px solid white;
+margin:auto;
+animation:spin 1s linear infinite;
+}
 
-        .install-btn {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 14px 26px;
-            border-radius: 10px;
-            background: white;
-            color: #1e3a8a;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-        }
+@keyframes spin{
+to{ transform:rotate(360deg); }
+}
 
-        .install-btn:hover {
-            transform: scale(1.05);
-        }
-    </style>
+.install-btn{
+display:inline-block;
+margin-top:35px;
+padding:14px 26px;
+border-radius:10px;
+background:white;
+color:#1e3a8a;
+text-decoration:none;
+font-weight:600;
+transition:0.2s;
+}
 
-    <script>
+.install-btn:hover{
+transform:scale(1.05);
+}
 
-        function openApp() {
+</style>
 
-            const path = window.location.pathname;
-            const inviteCode = path.split("/i/")[1];
+<script>
 
-            if (!inviteCode) return;
+function openApp(){
 
-            const appUrl = "bluetalk://invite/" + inviteCode;
+const path = window.location.pathname;
+const inviteCode = path.split("/i/")[1];
 
-            window.location.href = appUrl;
+if(!inviteCode) return;
 
-            setTimeout(() => {
-                window.location.href =
-                    "https://play.google.com/store/apps/details?id=com.bluetalk.bluetalk";
-            }, 2000);
+const appUrl = "bluetalk://invite/" + inviteCode;
 
-        }
+window.location.href = appUrl;
 
-        window.onload = openApp;
+}
 
-    </script>
+window.onload=openApp;
+
+</script>
 
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="logo">
-            <span>B</span>
-        </div>
+<div class="logo">
+<img src="/logo.png" alt="BlueTalk Logo">
+</div>
 
-        <h1>Opening BlueTalk</h1>
+<h1>Opening BlueTalk</h1>
 
-        <p class="subtitle">
-            Joining your invite link...
-        </p>
+<p class="subtitle">
+Joining your invite link...
+</p>
 
-        <div class="loader"></div>
+<div class="loader"></div>
 
-        <a class="install-btn" href="https://play.google.com/store/apps/details?id=com.bluetalk.bluetalk">
-            Install BlueTalk
-        </a>
+<a class="install-btn"
+href="/bluetalk.apk">
+Download BlueTalk
+</a>
 
-    </div>
+</div>
 
 </body>
 
