@@ -1,0 +1,14 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bluetalk.bluetalk",
+      "sha256_cert_fingerprints": [
+        "2C:8C:E6:58:B4:8C:1F:4B:85:FE:E6:25:A1:2F:82:2A:9B:D6:66:B1:CC:8D:67:41:8B:8C:75:7C:12:38:0B:77",
+        "C7:90:A3:01:BE:52:4A:36:A5:24:D1:17:AD:17:0A:7A:87:9F:8B:0A:83:25:B7:3E:1B:A7:5B:4A:2E:21:77:85",
+        "10:55:0E:A6:27:83:F4:C9:19:83:F1:04:22:4C:03:29:52:B5:6E:1D:BA:7E:79:61:04:EC:82:21:EC:86:33:35"
+      ]
+    }
+  }
+]c

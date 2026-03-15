@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening BlueTalk</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            width: 90%;
+            max-width: 420px;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 22px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        .logo span {
+            font-size: 34px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .loader {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.25);
+            border-top: 4px solid white;
+            margin: auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .install-btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 26px;
+            border-radius: 10px;
+            background: white;
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .install-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+
+    <script>
+
+        function openApp() {
+
+            const path = window.location.pathname;
+            const inviteCode = path.split("/i/")[1];
+
+            if (!inviteCode) return;
+
+            const appUrl = "bluetalk://invite/" + inviteCode;
+
+            window.location.href = appUrl;
+
+            setTimeout(() => {
+                window.location.href =
+                    "https://play.google.com/store/apps/details?id=com.bluetalk.bluetalk";
+            }, 2000);
+
+        }
+
+        window.onload = openApp;
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="logo">
+            <span>B</span>
+        </div>
+
+        <h1>Opening BlueTalk</h1>
+
+        <p class="subtitle">
+            Joining your invite link...
+        </p>
+
+        <div class="loader"></div>
+
+        <a class="install-btn" href="https://play.google.com/store/apps/details?id=com.bluetalk.bluetalk">
+            Install BlueTalk
+        </a>
+
+    </div>
+
+</body>
+
+</html>
